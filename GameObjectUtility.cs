@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,26 @@ namespace AyahaGraphicDevelopTools
         {
             var activeScene = SceneManager.GetActiveScene();
             return activeScene.GetRootGameObjects();
+        }
+
+        /// <summary>
+        /// 空のGameObjectを作成する
+        /// </summary>
+        /// <param name="objName">オブジェクト名前</param>
+        /// <param name="attachComponentTypes">アタッチするコンポーネント</param>
+        public static GameObject CreateEmptyGameObject(string objName, Type[] attachComponentTypes = null)
+        {
+            var emptyObj = new GameObject(objName);
+
+            if (attachComponentTypes != null)
+            {
+                foreach (var type in attachComponentTypes)
+                {
+                    emptyObj.AddComponent(type);
+                }
+            }
+
+            return emptyObj;
         }
     }
 }
