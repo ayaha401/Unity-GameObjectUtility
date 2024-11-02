@@ -9,7 +9,7 @@ namespace AyahaGraphicDevelopTools
     public static class GameObjectUtility
     {
         /// <summary>
-        /// Scene上の親オブジェクトを返す
+        /// Scene上の親オブジェクトを全部返す
         /// </summary>
         public static GameObject[] GetSceneRootGameObjects()
         {
